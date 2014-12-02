@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background-color: #C8C8C8;
+}
+p {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	color: #004919;
+}

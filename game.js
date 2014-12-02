@@ -1,0 +1,380 @@
+// JavaScript Document
+var page = 0;
+function OnPress(buttonPressed){
+	if (buttonPressed == 'A') 
+		page = story[page].DestinationA;
+	else if (buttonPressed == 'B') 
+		page = story[page].DestinationB;
+	else if (buttonPressed == 'C') 
+		page = page;
+document.getElementById("story").style.color = story[page].textColor;
+document.getElementById("story").style.backgroundColor = story[page].backColor;
+document.getElementById("story").innerHTML = story[page].text;	
+document.getElementsByName("NavGameA")[0].value = story[page].buttonA;	
+document.getElementsByName("NavGameB")[0].value = story[page].buttonB;
+document.getElementsByName("NavGameA")[0].hidden = true;
+document.getElementsByName("NavGameB")[0].hidden = true;
+document.getElementsByName("NavGameC")[0].hidden = true;
+document.getElementsByName("NavGameA")[0].hidden = story[page].isHiddenA;
+document.getElementsByName("NavGameB")[0].hidden = story[page].isHiddenB;
+document.getElementsByName("NavGameC")[0].hidden = story[page].isHiddenC;
+document.getElementsByClassName("NavGameC")[0].value = story[page].buttonC;
+}
+var textColorsList = [];
+textColorsList [0] = "#000000"; //black
+textColorsList [1] = "#CCFFFF"; //blue
+textColorsList [2] = "#A6653A"; //orange
+textColorsList [3] = "#99FF99"; //green
+textColorsList [4] = "#993300"; //darkred
+textColorsList [5] = "#0000CC"; //darkblue
+
+
+var story = [];
+
+story[0] = new Object ();
+story[0].text = "Would you like to be a boy or a girl?";
+story[0].buttonA = "Boy";
+story[0].buttonB = "Girl";
+story[0].DestinationA = 1;
+story[0].DestinationB = 2;
+story[0].isHiddenA = false;
+story[0].isHiddenB = false;
+story[0].isHiddenC = true;
+story[0].backColor = textColorsList[1];
+story[0].textColor = textColorsList[0];
+
+story[1] = new Object ();
+story[1].text = "It is the first day of class and you walk into TC401 and across the room you spot girl sitting across the room.  During the class the person seems to keep catching your eye.  You are initially attracted to the girl and our thinking of different ways to initiate yourself.  Should you?";
+story[1].buttonA = "Introduce oneself/Give nonverbal cues";
+story[1].buttonB = "Not do anything and hope they introduce themselves first";
+story[1].DestinationA = 3;
+story[1].DestinationB = 4;
+story[1].isHiddenA = false;
+story[1].isHiddenB = false;
+story[1].isHiddenC = true;
+story[1].backColor = textColorsList[1];
+story[1].textColor = textColorsList[0];
+
+story[2] = new Object ();
+story[2].text = "It is the first day of class and you walk into TC401 and across the room you spot guy sitting across the room.  During the class the person seems to keep catching your eye.  You are initially attracted to the guy and our thinking of different ways to initiate yourself.  Should you?";
+story[2].buttonA = "Introduce oneself/Give nonverbal cues";
+story[2].buttonB = "Not do anything and hope they introduce themselves first";
+story[2].DestinationA = 5;
+story[2].DestinationB = 6;
+story[2].isHiddenA = false;
+story[2].isHiddenB = false;
+story[2].isHiddenC = true;
+story[2].backColor = textColorsList[1];
+story[2].textColor = textColorsList[0];
+
+story[3] = new Object ();
+story[3].text = "Introducing oneself/Give nonverbal cues went smoothly and you find out that her name is Ariana.  After talking you figure out that she is interested in the same movies, sports and hobbies as you.  You want to ask if they want to go see a movie should you?";
+story[3].buttonA = "Ask for a phone number and text them later to go";
+story[3].buttonB = "Ask face-to-face";
+story[3].DestinationA = 7;
+story[3].DestinationB = 8;
+story[3].isHiddenA = false;
+story[3].isHiddenB = false;
+story[3].isHiddenC = true;
+story[3].backColor = textColorsList[3];
+story[3].textColor = textColorsList[4];
+
+story[4] = new Object();
+story[4].text = "After you do not do anything the girl does not acknowledge you the relationship is never initiated.  Play again?";
+story[4].buttonA = "Yes";
+story[4].buttonB = "No";
+story[4].DestinationA = 0;
+story[4].DestinationB = 0;
+story[4].isHiddenA = false;
+story[4].isHiddenB = true;
+story[4].isHiddenC = true;
+story[4].backColor = textColorsList[3];
+story[4].textColor = textColorsList[4];
+
+story[5] = new Object ();
+story[5].text = "Introducing oneself/Give nonverbal cues went smoothly and you find out that his name is Adam.  After talking you figure out that he is interested in the same movies, sports and hobbies as you.  You want to ask if they want to go see a movie should you?";
+story[5].buttonA = "Ask for a phone number and text them later to go";
+story[5].buttonB = "Ask face-to-face";
+story[5].DestinationA = 9;
+story[5].DestinationB = 10;
+story[5].isHiddenA = false;
+story[5].isHiddenB = false;
+story[5].isHiddenC = true;
+story[5].backColor = textColorsList[3];
+story[5].textColor = textColorsList[4];
+
+story[6] = new Object ();
+story[6].text = "After you do not do anything the boy does acknowledge the relationship you find out that his name is Adam.  After talking you figure out that he is interested in the same movies, sports and hobbies as you.  You want to ask if they want to go see a movie should you?";
+story[6].buttonA = "Ask for a phone number and text them later to go";
+story[6].buttonB = "Wait for them to ask you out";
+story[6].DestinationA = 11;
+story[6].DestinationB = 12;
+story[6].isHiddenA = false;
+story[6].isHiddenB = false;
+story[6].isHiddenC = true;
+story[6].backColor = textColorsList[3];
+story[6].textColor = textColorsList[4];
+
+story[7] = new Object (); 
+story[7].text = "You start to text and begin to build a close relationship in class and texting over the phone.  You decide that it is a good time to ask her to go see a movie.  The movie that you went and saw was a movie that you were both interested in and both really liked it.  After the date you start to care about Ariana and start to disclose more things about your private self.  The relationship begins to flourish.  Should you?";
+story[7].buttonA = "Ask her out";
+story[7].buttonB = "Continue to build the relationship";
+story[7].DestinationA = 13;
+story[7] .DestinationB = 14;
+story[7].isHiddenA = false;
+story[7].isHiddenB = false;
+story[7].isHiddenC = true;
+story[7].backColor = textColorsList[1];
+story[7].textColor = textColorsList[4];
+
+story[8] = new Object (); 
+story[8].text = "After asking the Ariana face-to-face to go to the movies see seems that they are moving too fast.  You really like the girl and are fine with her decision to take it slow.  After a few weeks of talking in class and building a stronger relationship you?";  
+story[8].buttonA = "Ask her on a date";
+story[8].buttonB = "Continue to build the relationship";
+story[8].DestinationA = 15;
+story[8].DestinationB = 16;
+story[8].isHiddenA = false;
+story[8].isHiddenB = false;
+story[8].isHiddenC = true;
+story[8].backColor = textColorsList[1];
+story[8].textColor = textColorsList[4];
+
+story[9] = new Object ();
+story[9].text = "You start to text and begin to build a close relationship in class and texting over the phone.  You decide that it is a good time to ask him to go see a movie.  The movie that you went and saw was a movie that you were both interested in and both really liked it.  After the date you start to care about Adam and start to disclose more things about your private self.  The relationship begins to flourish. A couple of years past you two get married and have two beautiful children.  Play again?";
+story[9].buttonA = "Yes";
+story[9].buttonB = "No";
+story[9].DestinationA = 0;
+story[9].DestinationB = 0;   
+story[9].isHiddenA = false;
+story[9].isHiddenB = true;
+story[9].isHiddenC = true;
+story[9].backColor = textColorsList[1];
+story[9].textColor = textColorsList[4];
+
+story[10] = new Object ();
+story[10].text = "Adam wanted to go see a movie with you and thought it would be a fun time.  After a great time at the movies you being to have feeling for Adam.  You started to disclose more personal things about your private self.  After a few months things start to deteriorate and Adam start communicate less and less with you.  You loss trust and care for him which ends in termination.  Play again?"; 
+story[10].buttonA = "Yes";
+story[10].buttonB = "No";
+story[10].DestinationA = 0;
+story[10].DestinationB = 0;
+story[10].isHiddenA = false;
+story[10].isHiddenB = true;
+story[10].isHiddenC = true;
+story[10].backColor = textColorsList[2];
+story[10].textColor = textColorsList[0];
+
+story[11] = new Object ();
+story[11].text = "You start to text and begin to build a close relationship in class and texting over the phone.  You decide that it is a good time to ask him to go see a movie.  The movie that you went and saw was a movie that you were both interested in and both really liked it.  After the date you start to care about Adam and start to disclose more things about your private self.  The relationship begins to flourish.  He then ask you out you say Yes or No?"; 
+story[11].buttonA = "Yes";
+story[11].buttonB = "No";
+story[11].DestinationA = 17;
+story[11].DestingationB = 18;
+story[11].isHiddenA = false;
+story[11].isHiddenB = false;
+story[11].isHiddenC = true; 
+story[11].backColor = textColorsList[1];
+story[11].textColor = textColorsList[4];
+
+story[12] = new Object ();  
+story[12].text = "After continuing to talk in class you begin to build a close relationship.  You continue to talk in class but that is the only initiation taking place.  You are attracted to him and want to establish a more intimate relationship.  You should?"; 
+story[12].buttonA = "Ask for his phone number";
+story[12].buttonB = "Do not rush it";
+story[12].DestinationA = 19;
+story[12].DestinationB = 20;
+story[12].isHiddenA = false;
+story[12].isHiddenB = false;
+story[12].isHiddenC = true;
+story[12].backColor = textColorsList[1];
+story[12].textColor = textColorsList[4];
+
+story[13] = new Object (); 
+story[13].text = "In the relationship there is trust and care for one another and you decide to ask Ariana out.  She thought about it and then said “no”.  You continue to still be friends but you cannot get over that she turned you down after the connection that you both have.  You do not see the relationship the same anymore and begin to pull away from Ariana.  Play again?";
+story[13].buttonA = "Yes";
+story[13].buttonB = "No";
+story[13].DestinationA = 0;
+story[13].DestinationB = 0;
+story[13].isHiddenA = false;
+story[13].isHiddenB = true;
+story[13].isHiddenC = true; 
+story[13].backColor = textColorsList[2];
+story[13].textColor = textColorsList[0]; 
+
+story[14] = new Object (); 
+story[14].text = "In the relationship with Ariana there is a strong connection of trust and care for one another.  You continue to hangout and become closer and closer.  You start to open up disclosing more information and getting deeper and deeper into the core of oneself.  She is the one girl that you want to be with.  Should you ask her out?";
+story[14].buttonA = "Yes";
+story[14].buttonB = "No";
+story[14].DestinationA = 21;
+story[14].DestinationB = 22; 
+story[14].isHiddenA = false;
+story[14].isHiddenB = false;
+story[14].isHiddenC = true; 
+story[14].backColor = textColorsList[1];
+story[14].textColor = textColorsList[4];
+
+story[15] = new Object (); 
+story[15].text = "Feeling like you have a strong connection with Ariana are beginning to bond you ask Ariana to go on a date.  She says not that she want to strictly be friends.  You want more then friends with Ariana over the next couple of weeks you begin to communicate less with Ariana.  You decided to cut ties and go your separate ways.  Play again?"; 
+story[15].buttonA = "Yes";
+story[15].buttonB = "No";
+story[15].DestinationA = 0;
+story[15].DestinationB = 0; 
+story[15].isHiddenA = false;
+story[15].isHiddenB = true;
+story[15].isHiddenC = true;
+story[15].backColor = textColorsList[3];
+story[15].textColor = textColorsList[2];
+
+story[16] = new Object (); 
+story[16].text = "You continue to build the relationship with Ariana and finally thought the time was right to ask her on a date.  The wait paid off because she said, “Yes” and you both had an amazing time.  As the years passed by Ariana and you became closer and cared for one another.  You asked to marry her and you guessed it she said “Yes”.  Over the years you had two beautiful child.  Everything seemed perfect but it was not.  There were communication issues and avoidance, should you continue to work on things?";
+story[16].buttonA = "Yes";
+story[16].buttonB = "No";
+story[16].DestinationA = 23;
+story[16].DestinationB = 24; 
+story[16].isHiddenA = false;
+story[16].isHiddenB = false;
+story[16].isHiddenC = true;
+story[16].backColor = textColorsList[3];
+story[16].textColor = textColorsList[2];
+
+story[17] = new Object ();
+story[17].text = "You are committed to Adam and have strong connection you open up disclosing more information and getting deeper and deeper into the core of oneself.  A couple years down the road he asked you to marry him.  You say Yes or No?";
+story[17].buttonA = "Yes";
+story[17].buttonB = "No";
+story[17].DestinationA = 25;
+story[17].DestinationB = 26;  
+story[17].isHiddenA = false;
+story[17].isHiddenB = false;
+story[17].isHiddenC = true;
+story[17].backColor = textColorsList[3];
+story[17].textColor = textColorsList[2];
+
+story[18] = new Object ();
+story[18].text = "In the relationship there is trust and care for one another.  You wanted to be friends but could not get over so.  Adam did not see the relationship the same anymore and begin to pull away.  Play again?";
+story[18].buttonA = "Yes";
+story[18].buttonB = "No";
+story[18].DestinationA = 0;
+story[18].DestinationB = 0;  
+story[18].isHiddenA = false;
+story[18].isHiddenB = true;
+story[18].isHiddenC = true;
+story[18].backColor = textColorsList[3];
+story[18].textColor = textColorsList[2];
+
+story[19] = new Object ();
+story[19].text = "You start to text and begin to build a close relationship in class and texting over the phone.  Adam wanted to go see a movie with you and thought it would be a fun time.  After a great time at the movies you being to have feeling for Adam.  You started to disclose more personal things about your private self.  A few weeks later he asked you out.  You said Yes or No?";
+story[19].buttonA = "Yes";
+story[19].buttonB = "No";
+story[19].DestinationA = 27;
+story[19].DestinationB = 28;  
+story[19].isHiddenA = false;
+story[19].isHiddenB = false;
+story[19].isHiddenC = true;
+story[19].backColor = textColorsList[3];
+story[19].textColor = textColorsList[2];
+
+story[20] = new Object ();
+story[20].text = "You take your time in the relationship and build a close relationship.  Adam does not want to move to fast and you remain close friends.  Play again?";
+story[20].buttonA = "Yes";
+story[20].buttonB = "No";
+story[20].DestinationA = 0;
+story[20].DestinationB = 0; 
+story[20].isHiddenA = false;
+story[20].isHiddenB = true;
+story[20].isHiddenC = true; 
+story[20].backColor = textColorsList[3];
+story[20].textColor = textColorsList[2];
+
+story[21] = new Object ();
+story[21].text = "You and Ariana have a romantic relationship that continues to grow and develop.  The both of you becoming internally committed to one another through marriage.  You end up living a happy life together.  Play again?";
+story[21].buttonA = "Yes";
+story[21].buttonB = "No";
+story[21].DestinationA = 0;
+story[21].DestinationB = 0;  
+story[21].isHiddenA = false;
+story[21].isHiddenB = true;
+story[21].isHiddenC = true;
+story[21].backColor = textColorsList[1];
+story[21].textColor = textColorsList[4];
+
+story[22] = new Object ();
+story[22].text = "You continue building trust and care for Ariana and remain close friends.  Play again?";
+story[22].buttonA = "Yes";
+story[22].buttonB = "No";
+story[22].DestinationA = 0;
+story[22].DestinationB = 0;  
+story[22].isHiddenA = false;
+story[22].isHiddenB = true;
+story[22].isHiddenC = true;
+story[22].backColor = textColorsList[3];
+story[22].textColor = textColorsList[2];
+
+story[23] = new Object ();
+story[23].text = "The relationship starts to deteriorate and there is less communication between Ariana and you.  You decide not to go through a divorce and build trust and intimacy that you once had with Ariana.  Play again?";
+story[23].buttonA = "Yes";
+story[23].buttonB = "No";
+story[23].DestinationA = 0;
+story[23].DestinationB = 0;
+story[23].isHiddenA = false;
+story[23].isHiddenB = true;
+story[23].isHiddenC = true;  
+story[23].backColor = textColorsList[3];
+story[23].textColor = textColorsList[2];
+
+story[24] = new Object ();
+story[24].text = "The marriage is starting to deteriorate due to lack of intimacy, communication and resentment.  Not continuing to work on things ends the relationship with divorce.  Play again?";
+story[24].buttonA = "Yes";
+story[24].buttonB = "No";
+story[24].DestinationA = 0;
+story[24].DestinationB = 0;  
+story[24].isHiddenA = false;
+story[24].isHiddenB = true;
+story[24].isHiddenC = true;
+story[24].backColor = textColorsList[3];
+story[24].textColor = textColorsList[2];
+
+story[25] = new Object ();
+story[25].text = "You and Adam have a romantic relationship that continues to grow and develop.  The both of you becoming internally committed to one another through marriage.  You end up living a happy life together.  Play again?";
+story[25].buttonA = "Yes";
+story[25].buttonB = "No";
+story[25].DestinationA = 0;
+story[25].DestinationB = 0;  
+story[25].isHiddenA = false;
+story[25].isHiddenB = true;
+story[25].isHiddenC = true;
+story[25].backColor = textColorsList[3];
+story[25].textColor = textColorsList[2];
+
+story[26] = new Object ();
+story[26].text = "You say “no” to Adams proposal and even though he is devastated by the new you still care for each other and remain close friends.  Play again?";
+story[26].buttonA = "Yes";
+story[26].buttonB = "No";
+story[26].DestinationA = 0;
+story[26].DestinationB = 0; 
+story[26].isHiddenA = false;
+story[26].isHiddenB = true;
+story[26].isHiddenC = true; 
+story[26].backColor = textColorsList[3];
+story[26].textColor = textColorsList[2];
+
+story[27] = new Object ();
+story[27].text = "After saying “yes”, You and Adam have a romantic relationship that continues to grow and develop.  The both of you becoming internally committed to one another through marriage.  You end up living a happy life together.  Play again?";
+story[27].buttonA = "Yes";
+story[27].buttonB = "No";
+story[27].DestinationA = 0;
+story[27].DestinationB = 0; 
+story[27].isHiddenA = false;
+story[27].isHiddenB = true;
+story[27].isHiddenC = true; 
+story[27].backColor = textColorsList[1];
+story[27].textColor = textColorsList[4];
+
+story[28] = new Object ();
+story[28].text = "You say “no” to Adams proposal he is devastated and he begins to distance himself and terminate the relationship.  Play again?";
+story[28].buttonA = "Yes";
+story[28].buttonB = "No";
+story[28].DestinationA = 0;
+story[28].DestinationB = 0; 
+story[28].isHiddenA = false;
+story[28].isHiddenB = true;
+story[28].isHiddenC = true; 
+story[28].backColor = textColorsList[2];
+story[28].textColor = textColorsList[0];
